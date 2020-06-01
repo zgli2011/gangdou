@@ -1,1 +1,13 @@
+# System
 .DS_Store
+*/.DS_Store
+*/.idea/
+.idea/
+
+# Python
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+
+*.log
