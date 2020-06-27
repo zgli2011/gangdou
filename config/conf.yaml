@@ -1,0 +1,7 @@
+database:
+  adapter: postgres
+  host: 10.0.0.8
+  port: 5432
+  name: postgres
+  username: gangdou
+  password: 1
