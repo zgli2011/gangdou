@@ -1,6 +1,8 @@
 package routes
 
 import (
+	"gangdou/controller"
+
 	"github.com/kataras/iris/v12"
 )
 
@@ -8,9 +10,7 @@ import (
 func APIRoute(app *iris.Application) {
 	apiRoute := app.Party("/api_v1")
 	{
-		apiRoute.Get("/user", func(ctx iris.Context) {
-			ctx.WriteString(ctx.Path())
-		})
+		apiRoute.Get("/user/{id:int64}", controller.GetUsers)
 	}
 }
 

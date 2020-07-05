@@ -3,28 +3,26 @@ package models
 import (
 	"fmt"
 	"gangdou/config"
-	"strings"
 
 	"github.com/go-xorm/xorm"
 )
 
+var (
+	dbClient *xorm.Engine
+)
+
 // DBEngine : 数据库驱动
 func DBEngine() *xorm.Engine {
-	var dataSource strings.Builder
-	dataSource.WriteString(config.InitConf().Database.Username)
-	dataSource.WriteString(":")
-	dataSource.WriteString(config.InitConf().Database.Password)
-	dataSource.WriteString("@")
-	dataSource.WriteString(config.InitConf().Database.Host)
-	dataSource.WriteString(":")
-	dataSource.WriteString(config.InitConf().Database.Port)
-	dataSource.WriteString("/")
-	dataSource.WriteString(config.InitConf().Database.DBName)
-	fmt.Println(dataSource.String())
-	DBClient, err := xorm.NewEngine(config.InitConf().Database.Adapter, dataSource.String())
+	if dbClient != nil {
+		return dbClient
+	}
+	conf := config.InitConf().Database
+	driveSource := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=utf8", conf.Username, conf.Password, conf.Host, conf.Port, conf.DBName)
+	engine, err := xorm.NewEngine(conf.Adapter, driveSource)
 	if err != nil {
 		fmt.Println("database connect failed")
 	}
-	DBClient.ShowSQL(true)
-	return DBClient
+	engine.ShowSQL(true)
+	dbClient = engine
+	return dbClient
 }
