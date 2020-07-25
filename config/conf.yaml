@@ -5,3 +5,7 @@ database:
   name: postgres
   username: gangdou
   password: 1
+
+log:
+  path: /tmp/gangdou.log
+  level: INFO

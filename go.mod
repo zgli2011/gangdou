@@ -1,20 +1,28 @@
-module gangdou
+module go
 
 go 1.14
 
 require (
+	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/Joker/jade v1.0.0 // indirect
+	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect
+	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
+	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20200529170236-5abacdfa4915 // indirect
 	github.com/go-xorm/xorm v0.7.9
 	github.com/gorilla/schema v1.1.0 // indirect
+	github.com/iris-contrib/blackfriday v2.0.0+incompatible // indirect
 	github.com/iris-contrib/formBinder v5.0.0+incompatible // indirect
-	github.com/jmoiron/sqlx v1.2.0 // indirect
-	github.com/kataras/iris v11.1.1+incompatible
+	github.com/iris-contrib/go.uuid v2.0.0+incompatible // indirect
+	github.com/json-iterator/go v1.1.10 // indirect
+	github.com/kataras/golog v0.0.18 // indirect
+	github.com/kataras/iris v11.1.1+incompatible // indirect
 	github.com/kataras/iris/v12 v12.1.8
-	github.com/kylelemons/go-gypsy v0.0.0-20160905020020-08cad365cd28 // indirect
+	github.com/klauspost/compress v1.10.10 // indirect
+	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
+	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	gopkg.in/ini.v1 v1.57.0
+	github.com/sirupsen/logrus v1.6.0 // indirect
+	golang.org/x/crypto v0.0.0-20200709230013-948cd5f35899 // indirect
 	gopkg.in/yaml.v2 v2.3.0
-	xorm.io/builder v0.3.7 // indirect
-	xorm.io/core v0.7.3 // indirect
 )
